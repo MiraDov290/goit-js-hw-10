@@ -1,0 +1,40 @@
+
+.is-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+
+.loader {
+    font-size: 32px;
+    width: auto;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} 
+
+.breed-select {
+    max-width: 400px;
+}
+
+.cat-info {
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+        justify-content: space-between;
+        font-size: 18px;
+    border: 1px solid #0d161b;
+}
+
+
+
+

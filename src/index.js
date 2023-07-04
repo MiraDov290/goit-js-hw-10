@@ -1,5 +1,5 @@
 import { fetchBreeds, fetchCatByBreed } from "./cat-api";
-// import '../dist/index.3521219d.css';
+import './styles.css';
 import SlimSelect from 'slim-select';
 import 'slim-select/dist/slimselect.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
@@ -19,14 +19,15 @@ loader.classList.replace('loader', 'is-hidden');
 error.classList.add('is-hidden');
 divCatInfo.classList.add('is-hidden');
 
-let arrBreedsId = [];
+
 fetchBreeds()
-.then(data => {
+    .then(data => {
+    const arrBreedsId = [];
     data.forEach(element => {
         arrBreedsId.push({text: element.name, value: element.id});
     });
     new SlimSelect({
-        select: selector,
+        select: '.breed-select',
         data: arrBreedsId
     });
 })  
@@ -37,7 +38,7 @@ selector.addEventListener('change', onSelectBreed);
 
 function onSelectBreed(event) {
     loader.classList.replace('is-hidden', 'loader');
-    selector.classList.add('is-hidden');
+    // selector.classList.add('is-hidden');
     divCatInfo.classList.add('is-hidden');
 
     const breedId = event.currentTarget.value;
@@ -60,8 +61,8 @@ function onFetchError(error) {
 
     Notify.failure('Oops! Something went wrong! Try reloading the page or select another cat breed!', {
         position: 'center-center',
-        timeout: 5000,
-        width: '400px',
-        fontSize: '24px'
+        width: 'auto',
+        fontSize: '32px',
     });
 };
+
