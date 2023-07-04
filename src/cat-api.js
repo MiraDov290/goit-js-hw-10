@@ -9,7 +9,7 @@ export function fetchBreeds() {
             }
             return response.json();
         });
-  
+    
 };
 
 export function fetchCatByBreed(breedId) {
