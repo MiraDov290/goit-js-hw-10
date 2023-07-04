@@ -1,4 +1,4 @@
-const url = 'https://api.thecatapi.com/v1/images/search';
+const url = 'https://api.thecatapi.com/v1';
 const api_key = "live_FcpssCX9H7WABYUGsNiwRLRumKB20H9RdEt6hRiMDWkCinGFjGECDSZFCei21kb6";
 
 export function fetchBreeds() {
@@ -8,7 +8,7 @@ export function fetchBreeds() {
                 throw new Error(response.status);
             }
             return response.json();
-        });       
+        });
 };
 
 export function fetchCatByBreed(breedId) {

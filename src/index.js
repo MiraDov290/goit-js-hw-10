@@ -1,5 +1,4 @@
 import { fetchBreeds, fetchCatByBreed } from "./cat-api";
-import './sass/example.scss';
 import SlimSelect from 'slim-select';
 import 'slim-select/dist/slimselect.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
@@ -12,6 +11,7 @@ const ref = {
     loader: document.querySelector('.loader'),
     error: document.querySelector('.error'),
 };
+
 const { selector, divCatInfo, loader, error } = ref;
 
 loader.classList.replace('loader', 'is-hidden');
@@ -28,8 +28,9 @@ fetchBreeds()
         select: selector,
         data: arrBreedsId
     });
-    })
+})  
 .catch(onFetchError);
+
 
 selector.addEventListener('change', onSelectBreed);
 
@@ -50,6 +51,7 @@ function onSelectBreed(event) {
     })
     .catch(onFetchError);
 };
+
 
 function onFetchError(error) {
     selector.classList.remove('is-hidden');
