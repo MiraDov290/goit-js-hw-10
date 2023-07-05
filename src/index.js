@@ -13,7 +13,8 @@ const refs = {
 };
 const { selector, divCatInfo, loader, error } = refs;
 
-loader.classList.replace('loader', 'is-hidden');
+loader.classList.replace('is-hidden', 'loader');
+selector.classList.remove('is-hidden');
 error.classList.add('is-hidden');
 divCatInfo.classList.add('is-hidden');
 
@@ -28,18 +29,17 @@ fetchBreeds()
     })
     .catch(onFetchError);
 
-
 selector.addEventListener('change', onSelectBreed);
 
 function onSelectBreed(event) {
-    loader.classList.replace('is-hidden', 'loader');
+      loader.classList.replace('is-hidden', 'loader');
     selector.classList.add('is-hidden');
     divCatInfo.classList.add('is-hidden');
 
     const breedId = event.currentTarget.value;
     fetchCatByBreed(breedId)
         .then(data => {
-            loader.classList.replace('loader', 'is-hidden');
+            loader.classList.replace('loader','is-hidden');
             selector.classList.remove('is-hidden');
             const { url, breeds } = data[0];
         
@@ -51,9 +51,8 @@ function onSelectBreed(event) {
 
 
 function onFetchError(error) {
-
-        selector.classList.remove('is-hidden');
-        loader.classList.replace('loader', 'is-hidden');
+    loader.classList.replace('loader', 'is-hidden');
+    selector.classList.remove('is-hidden');
 
         Notify.failure('Oops! Something went wrong! Try reloading the page or select another cat breed!', {
             position: 'center-center',
