@@ -26,6 +26,7 @@ fetchBreeds()
         new SlimSelect({
             select: '.breed-select',
         });
+        loader.classList.replace('loader', 'is-hidden');
     })
     .catch(onFetchError);
 
