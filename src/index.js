@@ -14,7 +14,7 @@ const refs = {
 const { selector, divCatInfo, loader, error } = refs;
 
 loader.classList.replace('is-hidden', 'loader');
-// selector.classList.remove('is-hidden');
+selector.classList.remove('is-hidden');
 error.classList.add('is-hidden');
 divCatInfo.classList.add('is-hidden');
 
